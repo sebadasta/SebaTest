@@ -22,11 +22,14 @@ def getAPI(station):
 
 #Filters Station Data (dict_data)
 def formatData(dict_data):
-  
-  data = dict_data["ArrayOfObjStationData"]["objStationData"]
 
-  next_trains_inStation = [row for row in data if is_valid_Duein(row["Duein"]) <= 30]
+  try:
+    data = dict_data["ArrayOfObjStationData"]["objStationData"]
 
+    next_trains_inStation = [row for row in data if is_valid_Duein(row["Duein"]) <= 30]
+  except KeyError:
+    return []
+    
   return next_trains_inStation
   
 
