@@ -63,12 +63,8 @@ def render_search():
 def render_action_Search():
   
   searchTxt = request.form.get("station")
-  print("searchTxt " + searchTxt)
 
   stations = getStationNames(searchTxt)
-  print("stations")
-  print(stations)
-
   
   return render_template('searchStation.html', stations=stations)
 

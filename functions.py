@@ -22,8 +22,6 @@ def getAPI(station):
 
 #Filters Station Data (dict_data)
 def formatData(dict_data):
-
-  print(len(dict_data["ArrayOfObjStationData"]))
   
   data = dict_data["ArrayOfObjStationData"]["objStationData"]
 
@@ -41,7 +39,6 @@ def is_valid_Duein(Duein_String):
 
 
 def getStationNames(searchTxt):
-  print(search_URL + searchTxt)
   response = requests.get(search_URL + searchTxt)
 
   try:
