@@ -42,14 +42,20 @@ def is_valid_Duein(Duein_String):
 
 
 def getStationNames(searchTxt):
-  response = requests.get(search_URL + searchTxt)
-
+  responseData = requests.get(search_URL + searchTxt)
+  
   try:
-    parsedResponse = xmltodict.parse(response.content)
+    parsedResponse = xmltodict.parse(responseData.content)
     data = parsedResponse['ArrayOfObjStationFilter']['objStationFilter']
 
+    if (isinstance(data,list)):
+      output = data
+      print("entro")
+      return output
+    else:
+      output = []
+      output.append(data)
+      return output
+      
   except:
     print("error")
-    data = None
-  
-  return data
