@@ -1,0 +1,19 @@
+<a style="" href="/">Back</a>
+
+<h1>{{entries[0].Stationfullname}}</h1>
+
+<ul style="list-style-type:none">
+{% for entry in entries %}
+  <li>
+    <h2>Destination: {{ entry.Destination}}</h2>
+    <div>Duein: {{entry.Duein }} min</div>
+    <div>Last location: {{entry.Lastlocation}}</div>
+    <div>Exparrival: {{entry.Exparrival}}</div>
+    <div>Late: {{entry.Late}} mins</div>
+    <div>Traincode: {{entry.Traincode}}</div>
+  </li>
+{% else %}
+  <li><em>No entries yet. Add some!</em></li>
+{% endfor %}
+</ul>
+
