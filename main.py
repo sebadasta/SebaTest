@@ -3,7 +3,7 @@ from functions import *
 from File_Mgt import *
 from flask import Flask, request, Blueprint, flash, Markup, redirect, render_template, url_for
 
-app = Flask('app', template_folder='template')
+app = Flask(__name__, template_folder='template')
 
 
 @app.route('/train')
