@@ -1,1 +1,1 @@
-web: gunicorn SebaTest.wsgi
+web: gunicorn wsgi.wsgi
