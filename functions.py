@@ -24,10 +24,12 @@ def getAPI(station):
 def formatData(dict_data):
 
   try:
+    
     data = dict_data["ArrayOfObjStationData"]["objStationData"]
 
     next_trains_inStation = [row for row in data if is_valid_Duein(row["Duein"]) <= 30]
-  except KeyError:
+    
+  except:
     return []
     
   return next_trains_inStation
@@ -50,7 +52,6 @@ def getStationNames(searchTxt):
 
     if (isinstance(data,list)):
       output = data
-      print("entro")
       return output
     else:
       output = []
